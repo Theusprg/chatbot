@@ -16,5 +16,5 @@ infeior direito vai ta escrito corretamente o nome como você pode ver na imgame
 começa os nomes validos se ele começar em um diferente da linha 2 mude o final da linha 28 para o numero correspondente no final da
 linha de codigo perto do parentese
 E no inicio do codigo na linha 7 e 9 adicione o nome da empresa eo link do pagamento correspondente.
-
+Você precisa criar um arquivo xlsx no ECXEL que tenha o nome e em seguida o número e adcionar o caminho no codigo.
 
