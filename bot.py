@@ -18,7 +18,7 @@ else:
     sleep(20) #tempo de espera para o verigicar o qrcode 
     n = 8 
 try:
-    arquivo_clientes = openpyxl.load_workbook(r'BotDoZap\clientes.xlsx')#coloque o caminho do aquivo dentro das aspas
+    arquivo_clientes = openpyxl.load_workbook(r'')#coloque o caminho do aquivo dentro das aspas
     pagina_clientes = arquivo_clientes[r'Planilha1']#abrir a planilha certa. E VERIFIQUE A LINGUA 
 except:
     print("O arquivo não foi encontrado!")
@@ -42,7 +42,7 @@ for linha in pagina_clientes.iter_rows(min_row=2):#verificar onde começa o nome
         webbrowser.open(link_zap)
         sleep(n)
         
-        seta = pyautogui.locateCenterOnScreen('./image/seta.png')#arquivo da seta
+        seta = pyautogui.locateCenterOnScreen('/seta.png')#arquivo da seta
         sleep(4)
         if seta: 
         
