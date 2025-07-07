@@ -1,20 +1,91 @@
-# chatbot
-import openpyxl
-from urllib.parse import quote
-import webbrowser
-from time import sleep
-import pyautogui
-para baixar o openpyxl você precisa digitar no seu terminar ou no prompt de comando -> pip install openpyxl
-os outros a mesma coisa digitem -> pip install webbrowser
-esse é usado para abrir o site do whats 
-o pyautogui é usado para mexer no seu mouse e clickar na seta de enviar a mensagem programada, você precisa também printar a imagem de 
-enviar do seu whats. Para baixar o pyautogui é so digiat -> pip install pyautogui
-depois disso você tem que salvar o arquivo que tem o nome dos clientes corretamente no formato xlsx 
-na linha 20 você adiciona o caminho da pasta dento das aspas. ATENÇÃO verifique se a pasta está em ingles ou português dependendo da
-língua mude oque está escrito dentro da aspas e coloque o nome certo, você pode localizar o nome entrando dentro do seu exel e no canto
-infeior direito vai ta escrito corretamente o nome como você pode ver na imgame que eu fixei aqui. E também verifique em qual linha 
-começa os nomes validos se ele começar em um diferente da linha 2 mude o final da linha 28 para o numero correspondente no final da
-linha de codigo perto do parentese
-E no inicio do codigo na linha 7 e 9 adicione o nome da empresa eo link do pagamento correspondente.
-Você precisa criar um arquivo xlsx no ECXEL que tenha o nome e em seguida o número e adcionar o caminho no codigo.
+# 🟢 Automação de Envio de Mensagens pelo WhatsApp com Excel
 
+Este script automatiza o envio de mensagens no WhatsApp usando uma planilha `.xlsx` com nomes e números de clientes.
+
+---
+
+## 🛠️ Dependências
+
+Você precisa instalar os seguintes pacotes Python:
+
+```bash
+pip install openpyxl
+pip install pyautogui
+❗ O webbrowser e time são bibliotecas nativas do Python, não precisam ser instaladas.
+
+📁 Estrutura da Planilha
+Crie um arquivo .xlsx com pelo menos duas colunas:
+
+Coluna A: Nome do cliente
+
+Coluna B: Número do cliente (com DDD e sem símbolos, ex: 5599999999999)
+
+✏️ Configuração do Código
+Abra o arquivo .py e configure os seguintes pontos:
+
+🔹 Linha 7 e Linha 9
+Adicione:
+
+O nome da empresa
+
+O link de pagamento
+
+python
+Copiar
+Editar
+nome_empresa = "Minha Empresa"
+link_pagamento = "https://linkdopagamento.com"
+🔹 Linha 20
+Coloque o caminho completo do arquivo .xlsx:
+
+python
+Copiar
+Editar
+caminho = r"C:\Users\SeuNome\Documents\clientes.xlsx"
+⚠️ Atenção com o idioma do Excel:
+Se o nome da aba estiver em português (como Planilha1) ou inglês (Sheet1), edite isso no código conforme necessário.
+
+🔹 Linha 28
+Ajuste o número da linha de início da leitura dos dados:
+
+Se os nomes começarem na linha 2, o final da linha do código será:
+
+python
+Copiar
+Editar
+for linha in planilha.iter_rows(min_row=2, ...)
+Se os dados começarem na linha 5, mude para min_row=5.
+
+🖱️ PyAutoGUI e Imagem do Botão de Enviar
+O pyautogui é usado para clicar automaticamente no botão de enviar do WhatsApp Web.
+
+Você precisa fazer um print da imagem do botão de envio do WhatsApp (ícone de “seta” de enviar) e salvar como, por exemplo:
+
+Copiar
+Editar
+enviar.png
+Deixe essa imagem no mesmo diretório do seu script .py.
+
+✅ Como usar
+Instale as dependências.
+
+Configure os dados no código.
+
+Salve seu arquivo .xlsx com nomes e números válidos.
+
+Execute o script e não mexa no mouse/teclado enquanto ele estiver rodando.
+
+O script abrirá o WhatsApp Web e enviará as mensagens automaticamente.
+
+📝 Observações
+O WhatsApp Web precisa estar logado.
+
+Evite mexer no computador durante a execução.
+
+Teste com poucos contatos antes de rodar com todos.
+
+💡 Exemplo de comando para iniciar:
+bash
+Copiar
+Editar
+python enviar_mensagens.py
